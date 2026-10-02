@@ -1,0 +1,160 @@
+/* 1. Variables: define your palette once, reuse it everywhere */
+:root {
+  --bg: #faf3e8;
+  --surface: #ffffff;
+  --accent: #9a5a26;
+  --text: #2b1d16;
+  --border: #e6d5c0;
+  --heading: #3b2418;
+}
+[data-theme="dark"]{
+  --bg: #1c1310;
+  --surface: #2a1d17;
+  --border: #4a3428;
+  --heading: #f3e3cf;
+  --text: #eadbc8;
+  --accent: #d69a5f;
+}
+
+/* 2. A tiny reset so sizing behaves predictably */
+* {
+  box-sizing: border-box;
+}
+
+/* 3. Page-wide defaults */
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+h1, h2, h3 {
+  font-family: "Trebuchet MS", sans-serif;
+  color: var(--heading);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 4. Header and nav */
+header {
+  background-color: var(--heading);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0 0 0.5rem;
+  color: var(--bg);
+}
+nav{
+  align-items: center;
+  display: flex;
+  gap: 1.25rem;
+}
+
+nav a {
+  margin-right: 1.25rem;
+  color: var(--bg);
+}
+
+.menu-grid{
+  display: grid;
+  gap:0.5rem ;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+}
+
+/* 5. Sections */
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+#hero {
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--bg);
+  padding: 0.75rem 1.5rem;
+  border-radius:99px;
+}
+
+.button:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+/*dark mode thingy*/
+#theme-toggle {
+  background: transparent;
+  color: var(--bg);
+  border: 1px solid var(--bg);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+#theme-toggle:hover {
+  background-color: rgba(250, 243, 232, 0.15);
+}
+
+/* 6. Menu cards */
+article {
+  background-color: var( --surface);
+  border: 1px solid #e6d5c0;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+article h3 {
+  margin: 0 0 0.25rem;
+}
+
+article p {
+  margin: 0 0 0.5rem;
+}
+
+article span {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+   article:hover {
+     border-color: var(--accent);
+   }
+
+/* 7. Footer */
+footer {
+  background-color: var(--heading);
+  color: var(--bg);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive: phones and small screens */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.25rem 1rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+}
