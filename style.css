@@ -192,7 +192,7 @@ footer {
 
 
 /* Responsive: phones and small screens */
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   header {
     flex-wrap: wrap;
     padding: 1.25rem 1rem;
