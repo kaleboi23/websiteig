@@ -35,3 +35,21 @@ filterButtons.forEach(function (button) {
     });
   });
 });
+
+const menuToggle = document.querySelector("#menu-toggle");
+const mainNav = document.querySelector("#main-nav");
+
+menuToggle.addEventListener("click", function () {
+  const isOpen = mainNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", isOpen);
+  menuToggle.textContent = isOpen ? "✕" : "☰";
+});
+
+// Close the menu after tapping a link
+mainNav.querySelectorAll("a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    mainNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", false);
+    menuToggle.textContent = "☰";
+  });
+});

@@ -22,6 +22,17 @@
 }
 
 /* 3. Page-wide defaults */
+#menu-toggle {
+  display: none;
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid var(--cream);
+  border-radius: 8px;
+  font-size: 1.25rem;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
@@ -175,9 +186,25 @@ footer {
 /* Responsive: phones and small screens */
 @media (max-width: 600px) {
   header {
-    flex-direction: column;
-    gap: 0.75rem;
+    flex-wrap: wrap;
     padding: 1.25rem 1rem;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 1rem;
+    gap: 0.75rem;
+  }
+
+  nav.open {
+    display: flex;
   }
 
   section {
