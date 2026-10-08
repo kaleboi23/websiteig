@@ -182,6 +182,14 @@ footer {
   text-align: center;
   padding: 1rem;
 }
+/* 7. Footer */
+footer {
+  background-color: var(--heading);
+  color: var(--bg);
+  text-align: center;
+  padding: 1rem;
+}
+
 
 /* Responsive: phones and small screens */
 @media (max-width: 600px) {
